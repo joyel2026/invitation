@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dr. Sarah & Daniel | Wedding Invitation</title>
+    <meta
+      name="description"
+      content="A graceful Christian wedding invitation website with ceremony details, RSVP, schedule, and heartfelt blessings."
+    />
+    <meta name="theme-color" content="#800020" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Great+Vibes&family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css" as="style" />
+  </head>
+  <body>
+    <div class="loader" id="loader">
+      <div class="loader-ring"></div>
+      <p>Preparing our celebration</p>
+    </div>
+
+    <header class="hero" id="top">
+      <nav class="navbar">
+        <a class="brand" href="#top">Sarah & Daniel</a>
+        <button class="nav-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+        <div class="nav-links">
+          <a href="#our-story">Our Story</a>
+          <a href="#schedule">Schedule</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#rsvp">RSVP</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content">
+        <p class="eyebrow">A Christian Wedding Celebration</p>
+        <h1>Dr. Sarah & Daniel</h1>
+        <p class="subheading">Join us as we celebrate love, faith, and a joyful beginning</p>
+        <div class="hero-actions">
+          <a href="#rsvp" class="btn btn-primary">RSVP Now</a>
+          <a href="#schedule" class="btn btn-secondary">View Schedule</a>
+        </div>
+        <div class="countdown" id="countdown">
+          <div><span id="days">00</span><small>Days</small></div>
+          <div><span id="hours">00</span><small>Hours</small></div>
+          <div><span id="minutes">00</span><small>Minutes</small></div>
+          <div><span id="seconds">00</span><small>Seconds</small></div>
+        </div>
+      </div>
+      <div class="hero-float" aria-hidden="true">
+        <i class="fa-solid fa-cross"></i>
+      </div>
+    </header>
+
+    <main>
+      <section class="section verse-section">
+        <div class="container reveal">
+          <p class="section-label">With gratitude and joy</p>
+          <blockquote>
+            “Love is patient, love is kind. It does not envy, it does not boast, it is not proud.”
+            <span>1 Corinthians 13:4</span>
+          </blockquote>
+          <p class="verse-note">We are delighted to invite you to share in this sacred day of worship, blessing, and celebration.</p>
+        </div>
+      </section>
+
+      <section class="section story-section" id="our-story">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Our Story</p>
+            <h2>How God brought us together</h2>
+          </div>
+          <div class="timeline">
+            <div class="timeline-item reveal">
+              <h3>First Meeting</h3>
+              <p>In a season of purpose and prayer, our paths crossed in the most unexpected way.</p>
+            </div>
+            <div class="timeline-item reveal">
+              <h3>First Date</h3>
+              <p>We discovered a shared passion for service, laughter, and the Lord’s goodness.</p>
+            </div>
+            <div class="timeline-item reveal">
+              <h3>Engagement</h3>
+              <p>With joyful hearts and grateful prayers, we said yes to forever.</p>
+            </div>
+            <div class="timeline-item reveal">
+              <h3>Wedding Day</h3>
+              <p>Now we invite you to witness the beginning of our covenant and new chapter together.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section schedule-section" id="schedule">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Ceremony & Reception</p>
+            <h2>Event schedule</h2>
+          </div>
+          <div class="schedule-list">
+            <div class="schedule-card reveal">
+              <h3>3:00 PM</h3>
+              <p>Church ceremony at St. Andrew’s Chapel</p>
+            </div>
+            <div class="schedule-card reveal">
+              <h3>4:30 PM</h3>
+              <p>Reception cocktails and photos</p>
+            </div>
+            <div class="schedule-card reveal">
+              <h3>6:00 PM</h3>
+              <p>Dinner, toasts, and dancing</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section gallery-section" id="gallery">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Memories</p>
+            <h2>Our cherished moments</h2>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-card reveal" data-image="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=1200&q=80" data-title="Wedding decor"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=900&q=80" alt="Wedding decor" /></div>
+            <div class="gallery-card reveal" data-image="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=80" data-title="Church ceremony"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=900&q=80" alt="Church ceremony" /></div>
+            <div class="gallery-card reveal" data-image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" data-title="Couple smiling"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Couple smiling" /></div>
+            <div class="gallery-card reveal" data-image="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1200&q=80" data-title="Wedding bouquet"><img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=900&q=80" alt="Wedding bouquet" /></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section rsvp-section" id="rsvp">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Please respond</p>
+            <h2>RSVP</h2>
+          </div>
+          <form class="rsvp-form reveal" action="https://formspree.io/f/your-form-id" method="POST">
+            <input type="text" name="name" placeholder="Full Name" required />
+            <input type="email" name="email" placeholder="Email" required />
+            <input type="tel" name="phone" placeholder="Phone" />
+            <select name="attendance">
+              <option>Attending the ceremony</option>
+              <option>Yes, I will attend</option>
+              <option>Regretfully, I cannot</option>
+            </select>
+            <textarea name="message" rows="4" placeholder="Your blessings or message"></textarea>
+            <button type="submit" class="btn btn-primary">Send RSVP</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="section contact-section" id="contact">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Blessings</p>
+            <h2>Contact & details</h2>
+          </div>
+          <div class="contact-card reveal">
+            <p><i class="fa-solid fa-location-dot"></i> St. Andrew’s Chapel, 24 Grace Avenue</p>
+            <p><i class="fa-solid fa-envelope"></i> hello@sr-danielwedding.com</p>
+            <p><i class="fa-solid fa-phone"></i> +1 (555) 123-4567</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="music-player" aria-label="Background music player">
+      <button id="playPauseBtn" class="music-btn" aria-label="Play or pause music"><i class="fa-solid fa-play"></i></button>
+      <span id="musicStatus">Paused</span>
+      <audio id="bgMusic" loop>
+        <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+      </audio>
+    </div>
+
+    <div class="lightbox" id="lightbox" aria-hidden="true">
+      <button class="lightbox-close" id="lightboxClose" aria-label="Close image">×</button>
+      <div class="lightbox-content">
+        <img id="lightboxImage" src="" alt="Wedding memory" />
+        <p id="lightboxTitle"></p>
+      </div>
+    </div>
+
+    <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fa-solid fa-arrow-up"></i></button>
+
+    <script src="js/main.js"></script>
+    <script src="js/gallery.js"></script>
+    <script src="js/audio-player.js"></script>
+  </body>
+</html>

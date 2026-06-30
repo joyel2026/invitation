@@ -1,0 +1,21 @@
+@media (max-width: 900px) {
+  .timeline, .schedule-list, .gallery-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 700px) {
+  .nav-toggle { display: inline-block; }
+  .nav-links {
+    position: absolute;
+    top: 72px;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    background: rgba(255,255,255,0.97);
+    padding: 1rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+  }
+  .nav-links.open { display: flex; }
+  .hero { padding-top: 7rem; }
+  .hero-actions { flex-direction: column; align-items: center; }
+}
