@@ -75,7 +75,7 @@ function createConfetti() {
   }
 }
 
-const targetDate = new Date('2026-10-24T15:00:00');
+const targetDate = new Date('2026-08-21T15:00:00');
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
