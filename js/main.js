@@ -47,6 +47,7 @@ const observer = new IntersectionObserver((entries) => {
 revealItems.forEach((item) => observer.observe(item));
 
 if (welcomeOverlay && openInvitationBtn) {
+  document.body.classList.add('welcome-visible');
   openInvitationBtn.addEventListener('click', () => {
     welcomeOverlay.classList.add('opening');
     if (welcomeHeading) welcomeHeading.textContent = "You're Invited";
@@ -58,6 +59,7 @@ if (welcomeOverlay && openInvitationBtn) {
     createConfetti();
     setTimeout(() => {
       welcomeOverlay.classList.add('hidden');
+      document.body.classList.remove('welcome-visible');
     }, 900);
   });
 }
