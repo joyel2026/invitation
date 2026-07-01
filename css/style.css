@@ -190,6 +190,7 @@ img { width: 100%; display: block; object-fit: cover; }
   font-size: 0.8rem;
   color: var(--primary);
   font-weight: 700;
+  text-align: center;
 }
 .story-details {
   display: grid;
