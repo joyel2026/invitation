@@ -16,15 +16,18 @@
     box-shadow: 0 10px 28px rgba(0,0,0,0.12);
   }
   .nav-links.open { display: flex; }
-  .hero { padding-top: 7rem; }
+  .hero {
+    padding-top: 7rem;
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
   .hero-actions { flex-direction: column; align-items: center; }
 
-  .welcome-overlay::before {
-    filter: blur(12px) brightness(0.72) saturate(0.92);
-    transform: scale(1);
-    background-position: center center;
-    background-size: contain;
-    background-repeat: no-repeat;
+  .welcome-bg {
+    background-position: center top;
+    background-size: cover;
+    transform: scale(1.01);
   }
 
   .welcome-overlay::after {
