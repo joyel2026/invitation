@@ -150,18 +150,18 @@ a { color: inherit; text-decoration: none; }
 .mobile-br {
   display: none;
 }
-@media (max-width: 768px) {
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-size: cover !important;
-    background-position: center top;
-    background-color: #fefbf6;
-    padding-top: 4.5rem;
-    padding-bottom: 1.5rem;
-    justify-content: flex-start;
-  }
+  @media (max-width: 768px) {
+    .hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-size: cover !important;
+      background-position: center top;
+      background-color: #fefbf6;
+      padding-top: 1rem; /* Reduced to move text higher */
+      padding-bottom: 1.5rem;
+      justify-content: flex-start;
+    }
   .hero-content {
     width: 100%;
     display: flex;
@@ -178,7 +178,14 @@ a { color: inherit; text-decoration: none; }
     align-items: center;
     gap: 0.5rem;
     padding-bottom: 0.8rem;
-    margin-top: 13rem !important;
+    margin-top: auto !important; /* Push to bottom */
+  }
+  .hero-invitation-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 14rem !important; /* Pushes this section perfectly below the cross and above the rings */
+    width: 100%;
   }
   .hero-names-section {
     margin-top: 0;
@@ -214,30 +221,31 @@ a { color: inherit; text-decoration: none; }
 
   /* === ABOVE CROSS: compact fonts (with !important to beat base styles) === */
   .hero-bible-heading {
-    font-size: clamp(1rem, 4vw, 1.3rem) !important;
+    font-size: clamp(1.3rem, 5.5vw, 1.8rem) !important; /* Increased font size */
     margin-top: 0 !important;
     margin-bottom: 0.1rem !important;
     line-height: 1.25 !important;
   }
   .hero-psalm-ref {
-    font-size: 0.6em !important;
-    margin-top: 0.15rem !important;
+    font-size: 0.55em !important;
+    margin-top: 0.2rem !important;
     display: block !important;
   }
   .hero-subtitle-joy {
-    font-size: clamp(1.2rem, 5vw, 1.7rem) !important;
-    margin-top: 0.1rem !important;
+    font-size: clamp(1.6rem, 7vw, 2.2rem) !important; /* Increased font size */
+    margin-top: 0.2rem !important;
     margin-bottom: 0 !important;
   }
 
-  /* === BELOW RINGS: invitation + timer === */
+  /* === BETWEEN CROSS & RINGS: invitation === */
   .hero-highlighted-invitation {
-    font-size: 0.85rem !important;
+    font-size: 0.9rem !important;
     line-height: 1.4 !important;
     margin-top: 0 !important;
-    margin-bottom: 0.4rem !important;
+    margin-bottom: 0 !important;
     padding: 0 1rem !important;
-    color: var(--ink) !important;
+    color: var(--primary) !important; /* Made burgundy */
+    font-weight: 600 !important;
   }
 
   /* Countdown — compact */
