@@ -410,7 +410,7 @@ h1, h2, h3 {
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(254, 251, 246, 0.25);
+  background: rgba(254, 251, 246, 0.72); /* Fades the background to a soft watermark */
   z-index: 0;
 }
 .family-content {
@@ -418,12 +418,13 @@ h1, h2, h3 {
   z-index: 1;
   max-width: 800px;
   margin: 0 auto;
+  text-shadow: 0 1px 8px rgba(255, 255, 255, 0.5); /* Soft glowing shadow for extra pop */
 }
 .family-eyebrow {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.5rem;
   font-style: italic;
-  color: var(--secondary);
+  color: var(--primary); /* Changed to rich burgundy for contrast */
   margin-bottom: 0.5rem;
   font-weight: 600;
 }
