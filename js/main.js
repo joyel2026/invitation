@@ -111,8 +111,10 @@ async function submitRsvpToPrivateStore(data) {
     throw new Error('RSVP endpoint is not configured.');
   }
 
-  const response = await fetch(url, {
+  // Google Apps Script requires no-cors mode; data still saves to the sheet
+  await fetch(url, {
     method: 'POST',
+    mode: 'no-cors',
     headers: {
       'Content-Type': 'application/json',
     },
@@ -121,13 +123,6 @@ async function submitRsvpToPrivateStore(data) {
       submittedAt: new Date().toISOString(),
     }),
   });
-
-  if (!response.ok) {
-    const errorText = await response.text();
-    throw new Error(errorText || `Request failed with status ${response.status}`);
-  }
-
-  return response.text();
 }
 
 if (rsvpForm) {
@@ -151,13 +146,13 @@ if (rsvpForm) {
       rsvpForm.reset();
 
       if (rsvpMessage) {
-        rsvpMessage.textContent = `Thank you, ${name}! Your RSVP has been saved privately to your local file.`;
+        rsvpMessage.textContent = `Thank you, ${name}! Your RSVP has been received. We look forward to celebrating with you! 🎉`;
         rsvpMessage.className = 'form-message success';
       }
     } catch (error) {
-      console.error('Unable to save RSVP privately:', error);
+      console.error('Unable to save RSVP:', error);
       if (rsvpMessage) {
-        rsvpMessage.textContent = 'Your RSVP could not be saved yet. Please start the local server.';
+        rsvpMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
         rsvpMessage.className = 'form-message error';
       }
     }
