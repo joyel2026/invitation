@@ -409,7 +409,7 @@ h1, h2, h3 {
   position: relative;
   background: #fefbf6 url('../images/bg_option2.jpg') center center/cover no-repeat;
   text-align: center;
-  padding: 8rem 0;
+  padding: 8rem 0 2rem 0; /* Reduced bottom padding to remove gap to schedule */
   color: var(--ink);
 }
 .family-section::before {
@@ -633,6 +633,9 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.25rem;
+}
+.schedule-section {
+  padding-top: 0; /* Removed top gap so it sits flush below the family section */
 }
 .timeline-item, .schedule-card, .gallery-card, .rsvp-form, .contact-card {
   background: white;
