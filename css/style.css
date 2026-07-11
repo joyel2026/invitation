@@ -178,6 +178,7 @@ a { color: inherit; text-decoration: none; }
     align-items: center;
     gap: 0.5rem;
     padding-bottom: 0.8rem;
+    margin-top: 13rem !important;
   }
   .hero-names-section {
     margin-top: 0;
