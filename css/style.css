@@ -155,7 +155,7 @@ a { color: inherit; text-decoration: none; }
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-size: 100% auto;
+    background-size: cover;
     background-position: center top;
     background-color: #fefbf6;
     padding-top: 6rem; /* clear the fixed 2-line navbar */
