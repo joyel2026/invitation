@@ -51,7 +51,7 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   width: 100%;
   height: 100%;
-  background: url('../images/overlay-bg.jpg') center center/cover no-repeat;
+  background: url('../images/bg_option1.jpg') center center/cover no-repeat;
   filter: blur(30px) brightness(0.25) saturate(0.8);
   transform: scale(1.05);
   transform-origin: center;
@@ -404,7 +404,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   place-items: center;
   text-align: center;
   padding: 4.5rem 1.5rem 3rem;
-  background: #fefbf6 url('../images/overlay-bg.jpg') center center/contain no-repeat;
+  background: #fefbf6 url('../images/bg_option1.jpg') center center/contain no-repeat;
   color: var(--ink);
 }
 .hero::before {
