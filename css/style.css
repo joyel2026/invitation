@@ -325,7 +325,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   content: '';
   position: absolute;
   inset: 0;
-  background: rgba(254, 251, 246, 0.75); /* Overlay to make text readable */
+  background: rgba(254, 251, 246, 0.2); /* Very light overlay so image is visible */
   z-index: 0;
 }
 .hero::after {
