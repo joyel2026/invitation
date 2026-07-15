@@ -658,7 +658,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-section {
   padding-top: 0; /* Removed top gap so it sits flush below the family section */
   position: relative;
-  background: #fefbf6 url('../images/bg_option2.jpg') center center/cover no-repeat;
+  background: #fefbf6 url('../images/bg_schedule_floral.jpg') center center/cover no-repeat;
 }
 .schedule-section::before {
   content: '';
@@ -717,37 +717,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   transform: translateX(-50%);
   background: linear-gradient(to bottom, rgba(212, 175, 55, 0.55), rgba(128, 0, 32, 0.2));
 }
-.schedule-list .schedule-rail {
-  position: absolute;
-  left: 50%;
-  top: var(--ball-top, 0px);
-  width: auto;
-  height: auto;
-  border-radius: 0;
-  background: transparent;
-  box-shadow: none;
-  transform: translate(-50%, -50%);
-  transition: top 0.35s ease;
-  z-index: 1;
-  font-size: 1.95rem;
-  line-height: 1;
-  filter: drop-shadow(0 4px 10px rgba(128, 0, 32, 0.18));
-  animation: bellChime 1.8s ease-in-out infinite;
-}
-.schedule-list .schedule-rail::before {
-  content: '🔔';
-  display: inline-block;
-  filter: saturate(1.2) drop-shadow(0 0 12px rgba(212, 175, 55, 0.55));
-}
-.schedule-list .schedule-rail::after {
-  content: '';
-  position: absolute;
-  inset: -0.65rem;
-  border-radius: 999px;
-  border: 1px solid rgba(212, 175, 55, 0.6);
-  opacity: 0.35;
-  animation: bellAura 2.1s ease-in-out infinite;
-}
+
 .schedule-card {
   position: relative;
   z-index: 2;
@@ -768,6 +738,20 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   background: var(--primary);
   transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
   box-shadow: 0 0 0 6px rgba(128, 0, 32, 0.15);
+}
+.schedule-card.flower-node::before {
+  content: '🌸';
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.8rem;
+  transform: translate(-50%, -50%) rotate(0deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.1));
+}
+.schedule-card.flower-node.active::before {
+  transform: translate(-50%, -50%) rotate(0deg) scale(1.15);
 }
 .schedule-card-inner {
   display: grid;
