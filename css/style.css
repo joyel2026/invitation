@@ -658,9 +658,82 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   padding-top: 8rem;
 }
 .schedule-list {
+  position: relative;
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1rem;
+  padding-left: 2.25rem;
+}
+.schedule-list::before {
+  content: '';
+  position: absolute;
+  left: 0.55rem;
+  top: 0.75rem;
+  bottom: 0.75rem;
+  width: 2px;
+  background: linear-gradient(to bottom, rgba(212, 175, 55, 0.55), rgba(128, 0, 32, 0.2));
+}
+.schedule-list .schedule-rail {
+  position: absolute;
+  left: 0.14rem;
+  top: var(--ball-top, 0px);
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 0 8px rgba(128, 0, 32, 0.12);
+  transform: translateY(-50%);
+  transition: top 0.35s ease;
+  z-index: 1;
+}
+.schedule-card {
+  position: relative;
+  z-index: 2;
+}
+.schedule-card::before {
+  content: '';
+  position: absolute;
+  left: -1.6rem;
+  top: 50%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--secondary);
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.16);
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+.schedule-card.active::before {
+  background: var(--primary);
+  transform: translateY(-50%) scale(1.15);
+  box-shadow: 0 0 0 8px rgba(128, 0, 32, 0.14);
+}
+.schedule-card-inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+}
+.schedule-card-copy {
+  display: grid;
+  gap: 0.12rem;
+}
+.schedule-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.4rem, 2.2vw, 1.75rem);
+  font-weight: 700;
+  color: var(--primary);
+}
+.schedule-card-copy p {
+  margin: 0;
+  color: var(--muted);
+}
+.schedule-time {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-align: right;
+  white-space: nowrap;
 }
 .gallery-grid {
   display: grid;

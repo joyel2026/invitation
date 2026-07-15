@@ -12,6 +12,8 @@ const bgMusic = document.getElementById('bgMusic');
 const rsvpForm = document.getElementById('rsvpForm');
 const rsvpMessage = document.getElementById('rsvpMessage');
 const rsvpSheetUrl = rsvpForm?.dataset.sheetUrl || window.RSVP_GOOGLE_SHEET_URL;
+const scheduleCards = document.querySelectorAll('.schedule-card');
+const scheduleList = document.querySelector('.schedule-list');
 
 // Welcome overlay removed — no interaction needed here
 
@@ -48,6 +50,36 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.15 });
 
 revealItems.forEach((item) => observer.observe(item));
+
+if (scheduleCards.length && scheduleList) {
+  const scheduleRail = document.createElement('span');
+  scheduleRail.className = 'schedule-rail';
+  scheduleList.appendChild(scheduleRail);
+
+  const scheduleObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('active');
+      } else {
+        entry.target.classList.remove('active');
+      }
+    });
+  }, { threshold: 0.55 });
+
+  scheduleCards.forEach((card) => scheduleObserver.observe(card));
+
+  const updateScheduleRail = () => {
+    const activeCard = Array.from(scheduleCards).find((card) => card.classList.contains('active')) || scheduleCards[0];
+    if (activeCard) {
+      const offset = activeCard.offsetTop + (activeCard.offsetHeight / 2);
+      scheduleList.style.setProperty('--ball-top', `${offset}px`);
+    }
+  };
+
+  window.addEventListener('scroll', updateScheduleRail, { passive: true });
+  window.addEventListener('resize', updateScheduleRail);
+  updateScheduleRail();
+}
 
 if (welcomeOverlay && openInvitationBtn) {
   document.body.classList.add('welcome-visible');
