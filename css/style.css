@@ -933,11 +933,19 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   align-items: center;
   gap: 2rem;
 }
+.scratch-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
 .scratch-wrapper {
   position: relative;
-  width: 300px;
-  height: 150px;
-  margin: 0 auto;
+  width: 120px;
+  height: 120px;
+  margin: 0;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -965,7 +973,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   opacity: 1;
   transform: scale(1);
 }
-#scratchCanvas {
+.scratchCanvas {
   position: absolute;
   top: 0;
   left: 0;

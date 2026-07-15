@@ -102,13 +102,30 @@
       <section class="section reveal-section" id="reveal">
         <div class="container reveal-container">
           <!-- The scratch card container -->
-          <div class="scratch-wrapper">
-            <!-- What gets revealed -->
-            <div class="scratch-content">
-              <h3>August 21, 2026</h3>
+          <div class="scratch-row">
+            <!-- Block 1: Aug -->
+            <div class="scratch-wrapper scratch-block">
+              <div class="scratch-content">
+                <h3>Aug</h3>
+              </div>
+              <canvas class="scratchCanvas"></canvas>
             </div>
-            <!-- The canvas that covers it -->
-            <canvas id="scratchCanvas"></canvas>
+            
+            <!-- Block 2: 21 -->
+            <div class="scratch-wrapper scratch-block">
+              <div class="scratch-content">
+                <h3>21</h3>
+              </div>
+              <canvas class="scratchCanvas"></canvas>
+            </div>
+            
+            <!-- Block 3: 2026 -->
+            <div class="scratch-wrapper scratch-block">
+              <div class="scratch-content">
+                <h3>2026</h3>
+              </div>
+              <canvas class="scratchCanvas"></canvas>
+            </div>
           </div>
 
           <!-- Timer container (initially hidden) -->
