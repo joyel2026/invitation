@@ -75,11 +75,13 @@ if (scheduleCards.length && scheduleList) {
       return;
     }
 
-    const listTop = scheduleList.getBoundingClientRect().top;
-    const cardTop = activeCard.getBoundingClientRect().top - listTop;
-    const cardCenter = cardTop + (activeCard.offsetHeight / 2);
+    const navbarOffset = navbar ? navbar.offsetHeight + 28 : 72;
+    const cardCenter = activeCard.offsetTop + (activeCard.offsetHeight / 2);
 
-    scheduleList.style.setProperty('--ball-top', `${Math.max(0, Math.min(cardCenter, scheduleList.offsetHeight))}px`);
+    scheduleList.style.setProperty(
+      '--ball-top',
+      `${Math.max(navbarOffset, Math.min(cardCenter, scheduleList.offsetHeight))}px`
+    );
   };
 
   window.addEventListener('scroll', updateScheduleRail, { passive: true });
