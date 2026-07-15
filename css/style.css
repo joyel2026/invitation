@@ -552,7 +552,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   margin: 5px 0;
 }
 .hero {
-  min-height: 100vh;
+  min-height: 80vh; /* Reduced from 100vh so the scratch section peeks up */
   position: relative;
   display: grid;
   place-items: center;
@@ -705,7 +705,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   gap: 0.7rem;
 }
 .schedule-section {
-  padding-top: 8rem;
+  padding-top: 2rem;
 }
 .schedule-list {
   position: relative;
@@ -1024,12 +1024,14 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 }
 .reveal-section .countdown {
   width: 100%;
-  max-width: 400px; /* Matches the ~400px width of the 3 scratch blocks */
+  max-width: 395px; /* Matches the ~395px width of the 3 scratch blocks */
   margin: 0 auto;
-  gap: clamp(0.4rem, 2vw, 0.8rem);
+  gap: clamp(0.2rem, 1vw, 0.8rem) !important;
+  flex-wrap: nowrap !important; /* Force all 4 timer blocks onto one line */
+  justify-content: center;
 }
 .reveal-section .countdown > div {
   flex: 1;
   min-width: 0; /* allows shrinking below content size if needed */
-  padding: clamp(0.5rem, 2vw, 1rem) 0.2rem;
+  padding: clamp(0.5rem, 2vw, 1rem) 0.2rem !important; /* Ensure padding doesn't force wrapping */
 }
