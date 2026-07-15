@@ -1030,13 +1030,8 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   flex-wrap: nowrap !important; /* Force all 4 timer blocks onto one line */
   justify-content: center;
 }
-.reveal-section .countdown span {
-  font-size: clamp(2rem, 7vw, 3.2rem) !important; /* Massively increased size */
-  line-height: 1;
-  margin-bottom: 0.2rem;
-}
 .reveal-section .countdown > div {
   flex: 1;
   min-width: 0; /* allows shrinking below content size if needed */
-  padding: clamp(0.5rem, 2vw, 1rem) 0.2rem !important; /* Ensure padding doesn't force wrapping */
+  padding: clamp(1rem, 3vw, 1.5rem) 0.2rem !important; /* Increased padding makes the boxes physically larger */
 }
