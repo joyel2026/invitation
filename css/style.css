@@ -235,7 +235,7 @@ a { color: inherit; text-decoration: none; }
 
   /* === BETWEEN CROSS & RINGS: invitation === */
   .hero-highlighted-invitation {
-    font-size: 1rem !important; /* Increased font size */
+    font-size: 1.15rem !important; /* Increased font size */
     line-height: 1.4 !important;
     margin-top: 0 !important;
     margin-bottom: 0 !important;
