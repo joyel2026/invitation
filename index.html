@@ -253,7 +253,6 @@
       <section class="section rsvp-section" id="rsvp">
         <div class="container">
           <div class="section-heading reveal">
-            <p class="section-label">Please respond</p>
             <h2>RSVP</h2>
           </div>
           <form id="rsvpForm" class="rsvp-form reveal" data-sheet-url="https://script.google.com/macros/s/AKfycbw8heFJ3lE-EYjU7mX8YhQ1C2d_aPptDuD0BX8_ZMBl_4gAyi3bjMFgtuREl9gFYNal/exec" novalidate>
@@ -265,11 +264,29 @@
                 <option>Attending the ceremony</option>
                 <option>Regretfully, I cannot</option>
               </select>
-              <textarea name="message" rows="4" placeholder="Your blessings or message"></textarea>
+
             </div>
             <button type="submit" class="btn btn-primary">Send RSVP</button>
           </form>
           <p id="rsvpMessage" class="form-message" role="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="section guestbook-section" id="guestbook" style="background: var(--bg-alt); padding-top: 4rem; padding-bottom: 6rem;">
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="section-label">Share your love</p>
+            <h2>Blessings &amp; Greetings</h2>
+          </div>
+          <form id="greetingForm" class="rsvp-form reveal" data-sheet-url="https://script.google.com/macros/s/AKfycbw8heFJ3lE-EYjU7mX8YhQ1C2d_aPptDuD0BX8_ZMBl_4gAyi3bjMFgtuREl9gFYNal/exec" novalidate>
+            <input type="hidden" name="formType" value="Greeting" />
+            <div class="rsvp-form-grid" style="grid-template-columns: 1fr; gap: 1.5rem;">
+              <input type="text" name="name" placeholder="Your Name" required style="width: 100%; max-width: 400px; margin: 0 auto; display: block;" />
+              <textarea name="message" rows="4" placeholder="Write your heartfelt blessing or greeting here..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="margin-top: 1.5rem;">Leave a Blessing</button>
+          </form>
+          <p id="greetingMessage" class="form-message" role="status" aria-live="polite"></p>
         </div>
       </section>
 

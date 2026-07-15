@@ -72,11 +72,9 @@ if (scheduleCards.length && scheduleList) {
     if (!scheduleList) return;
     const rect = scheduleList.getBoundingClientRect();
     
-    // The "beginning of our greatest yes" section is the navbar
-    const navBottom = navbar ? navbar.getBoundingClientRect().bottom : 70;
-    
-    // Position the heart significantly ahead of the navbar (approx 6-7 steps ahead)
-    let offset = (navBottom + 120) - rect.top;
+    // Position the heart near the vertical middle of the screen
+    // so it arrives at events well before the navbar does.
+    let offset = (window.innerHeight * 0.5) - rect.top;
     
     // Clamp the heart so it stays within the vertical line
     if (offset < 0) offset = 0;
@@ -195,6 +193,44 @@ if (rsvpForm) {
       if (rsvpMessage) {
         rsvpMessage.textContent = 'Something went wrong. Please try again or contact us directly.';
         rsvpMessage.className = 'form-message error';
+      }
+    }
+
+  });
+}
+
+const greetingForm = document.getElementById('greetingForm');
+const greetingMessage = document.getElementById('greetingMessage');
+
+if (greetingForm) {
+  greetingForm.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(greetingForm);
+    const submission = Object.fromEntries(formData.entries());
+    const name = String(submission.name || '').trim();
+
+    if (!name) {
+      if (greetingMessage) {
+        greetingMessage.textContent = 'Please enter your name.';
+        greetingMessage.className = 'form-message error';
+      }
+      return;
+    }
+
+    try {
+      await submitRsvpToPrivateStore(submission);
+      greetingForm.reset();
+
+      if (greetingMessage) {
+        greetingMessage.textContent = `Thank you, ${name}! Your blessing has been received with love. 💖`;
+        greetingMessage.className = 'form-message success';
+      }
+    } catch (error) {
+      console.error('Unable to save greeting:', error);
+      if (greetingMessage) {
+        greetingMessage.textContent = 'Something went wrong. Please try again.';
+        greetingMessage.className = 'form-message error';
       }
     }
   });
