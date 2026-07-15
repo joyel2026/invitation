@@ -555,11 +555,10 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   min-height: 80vh; /* Reduced from 100vh so the scratch section peeks up */
   position: relative;
   display: grid;
-  align-items: start; /* Pushes text to the top */
-  justify-items: center;
+  place-items: center; /* Puts text beautifully back in the center! */
   text-align: center;
-  padding: 1.5rem 1.5rem 3rem; /* Reduced top padding to absolute minimum so it sits ABOVE the cross */
-  background: #fefbf6 url('../images/bg_option1.jpg') center top/contain no-repeat;
+  padding: 4.5rem 1.5rem 3rem; /* Normal padding */
+  background: #fefbf6 url('../images/bg_schedule_floral.jpg') center center/cover no-repeat;
   color: var(--ink);
 }
 .hero::before {
