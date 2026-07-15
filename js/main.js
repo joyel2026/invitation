@@ -69,18 +69,25 @@ if (scheduleCards.length && scheduleList) {
   scheduleCards.forEach((card) => scheduleObserver.observe(card));
 
   const updateScheduleRail = () => {
-    const baseOffset = navbar ? navbar.offsetHeight + 70 : 110;
-    const sectionTop = scheduleList.getBoundingClientRect().top;
-    const sectionHeight = scheduleList.offsetHeight;
-    const travelRange = Math.max(sectionHeight - 140, 1);
-    const progress = Math.min(1, Math.max(0, (-sectionTop + window.innerHeight * 0.12) / travelRange));
-
-    scheduleList.style.setProperty('--ball-top', `${baseOffset + progress * travelRange}px`);
+    if (!scheduleList) return;
+    const rect = scheduleList.getBoundingClientRect();
+    
+    // The "beginning of our greatest yes" section is the navbar
+    const navBottom = navbar ? navbar.getBoundingClientRect().bottom : 70;
+    
+    // Position the heart slightly below the navbar so it glides perfectly with it
+    let offset = (navBottom + 20) - rect.top;
+    
+    // Clamp the heart so it stays within the vertical line
+    if (offset < 0) offset = 0;
+    if (offset > rect.height) offset = rect.height;
+    
+    scheduleList.style.setProperty('--ball-top', `${offset}px`);
   };
 
   window.addEventListener('scroll', updateScheduleRail, { passive: true });
   window.addEventListener('resize', updateScheduleRail);
-  requestAnimationFrame(updateScheduleRail);
+  updateScheduleRail();
 }
 
 if (welcomeOverlay && openInvitationBtn) {
