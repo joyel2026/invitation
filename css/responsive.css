@@ -1,5 +1,26 @@
 @media (max-width: 900px) {
   .timeline, .schedule-list, .gallery-grid { grid-template-columns: 1fr; }
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .gallery-card,
+  .gallery-card--feature,
+  .gallery-card--coming {
+    min-height: 260px;
+  }
+
+  .gallery-card--feature {
+    grid-column: span 1;
+    grid-row: span 1;
+    min-height: 320px;
+  }
+
+  .gallery-card--feature img {
+    min-height: 320px;
+  }
 }
 
 @media (min-width: 769px) {
