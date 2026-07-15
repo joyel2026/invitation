@@ -259,6 +259,20 @@ a { color: inherit; text-decoration: none; }
   .countdown small {
     font-size: 0.6rem !important;
   }
+  
+  /* Schedule mobile adjustments */
+  .schedule-list {
+    gap: 1rem;
+  }
+  .schedule-card-inner {
+    gap: 1rem; /* Reduce gap on narrow screens */
+  }
+  .schedule-title {
+    font-size: 1.2rem;
+  }
+  .schedule-time {
+    font-size: 0.95rem;
+  }
 }
 .sparkles {
   position: absolute;
@@ -643,12 +657,29 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 }
 .schedule-section {
   padding-top: 0; /* Removed top gap so it sits flush below the family section */
+  position: relative;
+  background: #fefbf6 url('../images/bg_option2.jpg') center center/cover no-repeat;
 }
-.timeline-item, .schedule-card, .gallery-card, .rsvp-form, .contact-card {
+.schedule-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(254, 251, 246, 0.85); /* Fades the background to a soft wash */
+  z-index: 0;
+}
+.schedule-section .container {
+  position: relative;
+  z-index: 1;
+}
+.timeline-item, .gallery-card, .rsvp-form, .contact-card {
   background: white;
   border-radius: 24px;
   box-shadow: 0 18px 40px rgba(0,0,0,0.06);
   padding: 1.4rem;
+}
+.schedule-card {
+  background: transparent;
+  padding: 1rem 0;
 }
 .venue-map-btn {
   display: inline-flex;
@@ -672,20 +703,23 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-list {
   position: relative;
   display: grid;
-  gap: 1rem;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
 }
 .schedule-list::before {
   content: '';
   position: absolute;
-  left: calc(100% - 4.9rem);
+  left: 50%;
   top: 0.75rem;
   bottom: 0.75rem;
   width: 2px;
+  transform: translateX(-50%);
   background: linear-gradient(to bottom, rgba(212, 175, 55, 0.55), rgba(128, 0, 32, 0.2));
 }
 .schedule-list .schedule-rail {
   position: absolute;
-  left: calc(100% - 4.9rem);
+  left: 50%;
   top: var(--ball-top, 0px);
   width: auto;
   height: auto;
@@ -721,27 +755,26 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-card::before {
   content: '';
   position: absolute;
-  left: calc(100% - 4.9rem);
+  left: 50%;
   top: 50%;
-  width: 14px;
-  height: 14px;
-  border-radius: 50%;
+  width: 10px;
+  height: 10px;
   background: var(--secondary);
-  transform: translate(-50%, -50%);
-  box-shadow: 0 0 0 6px rgba(212, 175, 55, 0.16);
+  transform: translate(-50%, -50%) rotate(45deg);
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
   transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 .schedule-card.active::before {
   background: var(--primary);
-  transform: translate(-50%, -50%) scale(1.15);
-  box-shadow: 0 0 0 8px rgba(128, 0, 32, 0.14);
+  transform: translate(-50%, -50%) rotate(45deg) scale(1.2);
+  box-shadow: 0 0 0 6px rgba(128, 0, 32, 0.15);
 }
 .schedule-card-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
   align-items: center;
-  padding-inline: 0.75rem 0.75rem;
+  padding-inline: 0;
 }
 .schedule-card-copy {
   display: grid;
