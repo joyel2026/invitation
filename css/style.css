@@ -703,8 +703,8 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-list {
   position: relative;
   display: grid;
-  gap: 1.5rem;
-  max-width: 600px;
+  gap: 1.2rem;
+  max-width: 700px;
   margin: 0 auto;
 }
 .schedule-list::before {
@@ -728,10 +728,11 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   background: transparent;
   box-shadow: none;
   transform: translate(-50%, -50%);
-  z-index: 1;
+  z-index: 3;
   font-size: 1.95rem;
   line-height: 1;
   filter: drop-shadow(0 4px 10px rgba(128, 0, 32, 0.18));
+  animation: bellChime 1.8s ease-in-out infinite;
 }
 .schedule-list .schedule-rail::before {
   content: '💖';
@@ -751,18 +752,28 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-card {
   position: relative;
   z-index: 2;
+  padding: 1rem 0.5rem;
+  transition: transform 0.28s ease, opacity 0.28s ease;
+}
+.schedule-card.active {
+  transform: translateX(0.2rem);
+}
+.schedule-card.active .schedule-card-inner {
+  background: linear-gradient(90deg, rgba(212, 175, 55, 0.14), rgba(128, 0, 32, 0.05));
+  border-radius: 18px;
 }
 
 .schedule-card-inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.5rem;
   align-items: center;
-  padding-inline: 0;
+  padding: 0.95rem 1rem;
 }
 .schedule-card-copy {
   display: grid;
   gap: 0.12rem;
+  text-align: left;
 }
 .schedule-title {
   font-family: 'Cormorant Garamond', serif;

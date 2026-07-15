@@ -69,20 +69,22 @@ if (scheduleCards.length && scheduleList) {
   scheduleCards.forEach((card) => scheduleObserver.observe(card));
 
   const updateScheduleRail = () => {
-    // Make the flower glide with the viewport, just below the navbar (approx 120px from top)
-    const rect = scheduleList.getBoundingClientRect();
-    let offset = 120 - rect.top;
-    
-    // Clamp the flower so it stays within the vertical line
-    if (offset < 0) offset = 0;
-    if (offset > rect.height) offset = rect.height;
-    
-    scheduleList.style.setProperty('--ball-top', `${offset}px`);
+    const activeCard = Array.from(scheduleCards).find((card) => card.classList.contains('active')) || scheduleCards[0];
+
+    if (!activeCard) {
+      return;
+    }
+
+    const listTop = scheduleList.getBoundingClientRect().top;
+    const cardTop = activeCard.getBoundingClientRect().top - listTop;
+    const cardCenter = cardTop + (activeCard.offsetHeight / 2);
+
+    scheduleList.style.setProperty('--ball-top', `${Math.max(0, Math.min(cardCenter, scheduleList.offsetHeight))}px`);
   };
 
   window.addEventListener('scroll', updateScheduleRail, { passive: true });
   window.addEventListener('resize', updateScheduleRail);
-  updateScheduleRail();
+  requestAnimationFrame(updateScheduleRail);
 }
 
 if (welcomeOverlay && openInvitationBtn) {
