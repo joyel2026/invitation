@@ -558,8 +558,8 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   align-items: start; /* Pushes text to the top */
   justify-items: center;
   text-align: center;
-  padding: 6.5rem 1.5rem 3rem; /* Increased top padding so it's not hugging the extreme top */
-  background: #fefbf6 url('../images/bg_option1.jpg') center center/contain no-repeat;
+  padding: 1.5rem 1.5rem 3rem; /* Reduced top padding to absolute minimum so it sits ABOVE the cross */
+  background: #fefbf6 url('../images/bg_option1.jpg') center top/contain no-repeat;
   color: var(--ink);
 }
 .hero::before {
