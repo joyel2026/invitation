@@ -779,7 +779,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-card-copy {
   display: grid;
   gap: 0.12rem;
-  text-align: right;
+  text-align: left;
 }
 .schedule-title {
   font-family: 'Cormorant Garamond', serif;
@@ -796,8 +796,8 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   font-size: 1.05rem;
   font-weight: 700;
   color: var(--ink);
-  text-align: left;
-  white-space: normal;
+  text-align: right;
+  white-space: nowrap;
 }
 .gallery-grid {
   display: grid;
