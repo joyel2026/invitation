@@ -38,8 +38,9 @@
 
   .hero {
     padding: 4.75rem 1.5rem 2.2rem;
-    background-size: cover;
-    background-position: center center;
+    background-size: contain;
+    background-position: center top;
+    background-repeat: no-repeat;
     background-color: #fefbf6;
   }
 
