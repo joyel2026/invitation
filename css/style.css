@@ -665,7 +665,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-list::before {
   content: '';
   position: absolute;
-  left: calc(50% - 1px);
+  left: calc(100% - 4.9rem);
   top: 0.75rem;
   bottom: 0.75rem;
   width: 2px;
@@ -673,7 +673,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 }
 .schedule-list .schedule-rail {
   position: absolute;
-  left: calc(50% + 0.05rem);
+  left: calc(100% - 4.9rem);
   top: var(--ball-top, 0px);
   width: 18px;
   height: 18px;
@@ -691,7 +691,7 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .schedule-card::before {
   content: '';
   position: absolute;
-  left: calc(50% - 0.45rem);
+  left: calc(100% - 4.9rem);
   top: 50%;
   width: 14px;
   height: 14px;
