@@ -75,8 +75,8 @@ if (scheduleCards.length && scheduleList) {
     // The "beginning of our greatest yes" section is the navbar
     const navBottom = navbar ? navbar.getBoundingClientRect().bottom : 70;
     
-    // Position the heart slightly below the navbar so it glides perfectly with it
-    let offset = (navBottom + 20) - rect.top;
+    // Position the heart significantly ahead of the navbar (approx 6-7 steps ahead)
+    let offset = (navBottom + 120) - rect.top;
     
     // Clamp the heart so it stays within the vertical line
     if (offset < 0) offset = 0;
