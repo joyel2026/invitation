@@ -95,11 +95,8 @@ if (scheduleCards.length && scheduleList) {
       if (clampedPct > 1) clampedPct = 1;
       
       const point = svgPath.getPointAtLength(pathLength * clampedPct);
-      // Since viewBox is 0 0 100 1000, point.x gives us a percentage value (0 to 100)
-      scheduleList.style.setProperty('--heart-x', `calc(50% + ${point.x - 50}px)`); 
-      // The SVG wrapper is 100px wide, so point.x (0 to 100) translates exactly to 0px to 100px across the wrapper width!
-      // Center of the list is 50%, and the wrapper is centered. 
-      // Left edge of SVG is at 50% - 50px.
+      // Pass the raw percentage (0 to 1) so CSS can scale it based on width
+      scheduleList.style.setProperty('--heart-x-pct', point.x / 100); 
     }
   };
 
@@ -258,3 +255,20 @@ if (greetingForm) {
 
 updateCountdown();
 setInterval(updateCountdown, 1000);
+
+// Automatically apply 'filled' class for styling when inputs have data (handles autofill/paste robustly on all browsers)
+document.querySelectorAll('.rsvp-form input, .rsvp-form textarea, .rsvp-form select').forEach(el => {
+  const checkFilled = () => {
+    if (el.value.trim() !== '') {
+      el.classList.add('filled');
+    } else {
+      el.classList.remove('filled');
+    }
+  };
+  el.addEventListener('input', checkFilled);
+  el.addEventListener('change', checkFilled);
+  el.addEventListener('blur', checkFilled);
+  
+  // Initial check in case of browser autofill on load
+  setTimeout(checkFilled, 100);
+});

@@ -938,9 +938,9 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .rsvp-form select option {
   color: var(--ink); /* Normal color for the actual dropdown options */
 }
-.rsvp-form input:not(:placeholder-shown),
-.rsvp-form textarea:not(:placeholder-shown),
-.rsvp-form select:valid,
+.rsvp-form input.filled,
+.rsvp-form textarea.filled,
+.rsvp-form select.filled,
 .rsvp-form input:focus,
 .rsvp-form textarea:focus,
 .rsvp-form select:focus {
