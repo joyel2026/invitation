@@ -979,6 +979,12 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
 .lightbox-close {
   position: absolute; top: 1.5rem; right: 1.5rem; background: rgba(0,0,0,0.5); width: 40px; height: 40px; border-radius: 50%; border: none; color: white; font-size: 1.8rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10;
 }
+.lightbox-nav {
+  position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); width: 44px; height: 44px; border-radius: 50%; border: none; color: white; font-size: 1.5rem; cursor: pointer; display: flex; align-items: center; justify-content: center; z-index: 10; transition: background 0.3s ease;
+}
+.lightbox-nav:hover { background: rgba(0,0,0,0.8); }
+.lightbox-prev { left: 1rem; }
+.lightbox-next { right: 1rem; }
 @keyframes drift { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
 
 /* Scratch Reveal Section */
