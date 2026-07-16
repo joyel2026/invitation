@@ -139,25 +139,37 @@ function createConfetti() {
   }
 }
 
-const targetDate = new Date('2026-08-21T10:45:00+05:30');
+const targetDate = new Date('2026-08-21T00:00:00+05:30');
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
+  
+  const countdownContainer = document.getElementById('countdown');
+  const weddingDayMessage = document.getElementById('weddingDayMessage');
+  
   if (diff <= 0) {
-    document.getElementById('days').textContent = '00';
-    document.getElementById('hours').textContent = '00';
-    document.getElementById('minutes').textContent = '00';
-    document.getElementById('seconds').textContent = '00';
+    if (countdownContainer) countdownContainer.style.display = 'none';
+    if (weddingDayMessage) weddingDayMessage.classList.remove('hidden');
     return;
   }
+  
+  if (countdownContainer) countdownContainer.style.display = '';
+  if (weddingDayMessage) weddingDayMessage.classList.add('hidden');
+  
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
   const minutes = Math.floor((diff / (1000 * 60)) % 60);
   const seconds = Math.floor((diff / 1000) % 60);
-  document.getElementById('days').textContent = String(days).padStart(2, '0');
-  document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-  document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-  document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
+  
+  const dEl = document.getElementById('days');
+  const hEl = document.getElementById('hours');
+  const mEl = document.getElementById('minutes');
+  const sEl = document.getElementById('seconds');
+  
+  if (dEl) dEl.textContent = String(days).padStart(2, '0');
+  if (hEl) hEl.textContent = String(hours).padStart(2, '0');
+  if (mEl) mEl.textContent = String(minutes).padStart(2, '0');
+  if (sEl) sEl.textContent = String(seconds).padStart(2, '0');
 }
 
 async function submitRsvpToPrivateStore(data) {
