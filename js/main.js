@@ -139,7 +139,7 @@ function createConfetti() {
   }
 }
 
-const targetDate = new Date('2025-01-01T00:00:00+05:30'); // DEMO MODE: Past date to show popup
+const targetDate = new Date('2026-08-21T00:00:00+05:30');
 function updateCountdown() {
   const now = new Date();
   const diff = targetDate - now;
