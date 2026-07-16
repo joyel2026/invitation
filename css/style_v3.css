@@ -619,10 +619,10 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   width: min(150px, 35vw);
   height: auto;
   opacity: 0.9; 
-  mix-blend-mode: multiply; /* Magically removes the white background and blends with the hero background! */
+  mix-blend-mode: darken; /* Darken ignores pure white, perfectly blending the image */
   pointer-events: none;
   z-index: 2;
-  filter: brightness(1.1) contrast(1.15); /* Pushes off-white backgrounds to pure white so they disappear completely */
+  filter: contrast(1.5) brightness(1.15); /* Pushes off-white AI backgrounds to pure white so they disappear completely */
 }
 .hero-content, .hero-float { position: relative; z-index: 1; }
 .eyebrow {
