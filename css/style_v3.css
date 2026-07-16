@@ -542,7 +542,7 @@ h2 { font-size: clamp(2rem, 3vw, 2.8rem); }
   color: var(--ink);
 }
 .nav-links { display: flex; gap: 1rem; }
-.nav-links a { color: var(--ink); font-weight: 600; font-size: 1.15rem; transition: color 0.3s; }
+.nav-links a { color: var(--ink); font-weight: 600; font-size: 1.35rem; transition: color 0.3s; }
 .nav-toggle { display: none; background: transparent; border: none; cursor: pointer; }
 .nav-toggle span {
   display: block;
