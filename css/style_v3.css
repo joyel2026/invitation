@@ -1112,6 +1112,16 @@ blockquote span { display: block; margin-top: 0.8rem; font-size: 0.95rem; color:
   padding: clamp(1rem, 3vw, 1.5rem) 0.2rem !important; /* Increased padding makes the boxes physically larger */
 }
 
+@media (min-width: 768px) {
+  .reveal-section .countdown {
+    max-width: 650px;
+    gap: 1.5rem !important;
+  }
+  .reveal-section .countdown > div {
+    padding: 1.5rem 1rem !important;
+  }
+}
+
 /* Tighter spacing for bottom sections */
 .rsvp-section {
   padding-bottom: 2rem;
